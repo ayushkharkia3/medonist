@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medonyst</title>
+    <link rel="stylesheet" href="/css/navbar/navbar.css">
+    <link rel="stylesheet" href="/css/record/record.css">
+</head>
+
+<body>
+    <!-- Sidepanel -->
+    <div id="mySidepanel" class="sidepanel">
+        <div class="blue">
+            <h1>Menu</h1>
+        </div>
+        <a href="/">Home</a>
+        <a href="/recommendation">Medicines</a>
+        <a href="/reminder">Reminders</a>
+        <a href="/record">Records</a>
+        <a href="/doctor">Doctors</a>
+        <a href="#">About Us</a>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <button class="openbtn" onclick="openNav()">
+            <input id="ham" type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a href="/" id="logo">
+            <h1>MEDONYST</h1>
+        </a>
+        <a class="navLink" href="#">
+            <img src="/images/bell.svg" alt="">
+        </a>
+        <a class="navLink" href="#">
+            <img src="/images/user.svg" alt="">
+        </a>
+    </nav>
+
+    <!-- Navigation Buttons -->
+    <div class="appNav">
+        <a href="/recommendation">
+            <div class="appNavBtn medicine">
+                <img src="/images/medicine.png" alt="">
+                <h1>Medicines</h1>
+                <p>Get medicine <br> substitutes</p>
+            </div>
+        </a>
+        <a href="/reminder">
+            <div class="appNavBtn reminder">
+                <img src="/images/Reminder.png" alt="">
+                <h1>Reminders</h1>
+                <p>Set medicine <br> reminders</p>
+            </div>
+        </a>
+        <a href="/record">
+            <div class="appNavBtn record active">
+                <img src="/images/Record.png" alt="">
+                <h1>Records</h1>
+                <p>Upload your <br> medical records</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Records Section -->
+    <div class="container">
+        <div class="back">
+            <a href="/">
+                <h1>Back</h1>
+            </a>
+        </div>
+        <div class="title">
+            <h1>Patient History</h1>
+            <p>Please enter your details for the following:
+            </p>
+        </div>
+        <form action="/record" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <div class="form">
+                <input type="text" name="name" placeholder="Name" id="name" required value="<%= (record)?record.name:'' %>">
+                <div class="subForm">
+                    <input type="number" name="age" required value="<%= (record)?record.age:'' %>" placeholder="Age (Eg. 21)" id="age">
+                    <input type="text" name="dob" required placeholder="DD/MM/YY" value="<%= (record)?record.dob:'' %>" id="dob">
+                </div>
+                <input type="text" name="gender" required placeholder="Sex (M/F)" value="<%= (record)?record.gender:'' %>" id="sex">
+                <textarea id="symp" name="symptoms" required cols="30" rows="10" placeholder="Enter any symptoms"><%= (record)?record.symptoms:'' %></textarea>
+                <textarea id="pres" cols="30" required name="medicines" rows="10" placeholder="Enter prescribed medications"><%= (record)?record.medicines:'' %></textarea>
+                <button id="save">Save Details</button>
+        </form>
+        </div>
+    </div>
+
+
+
+
+    <script src="/js/navbar.js"></script>
+</body>
+
+</html>
