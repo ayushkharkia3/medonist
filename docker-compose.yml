@@ -11,6 +11,7 @@ services:
         - MONGODB_HOST_NAME=mongo
         - MONGODB_PORT=27017
         - MONGODB_NAME=medonist
+        - ML_URL=http://localhost:8000/
       depends_on:
         - mongo
     mongo:
