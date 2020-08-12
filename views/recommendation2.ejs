@@ -79,66 +79,39 @@
         <h1 id="title">Medicine Recommender</h1>
 
         <div class="cards">
-            <div class="cardChild">
-                <div class="sympName">
-                    <h1>Corona</h1>
-                </div>
-                <div class="medicineWrapper">
-                    <div class="medicine">
-                        <h1 id="recTitle">DOCTOR RECOMMENDED</h1>
-                        <h1 id="med1">Dexmeac</h1>
-                        <h1 id="med2">Calciutisol</h1>
+            <% x.forEach(e =>{%>
+                <div class="cardChild">
+                    <div class="sympName">
+                        <h1>
+                            <%= e.symptom %>
+                        </h1>
                     </div>
-                    <div class="medicine">
-                        <h1 id="recTitle">PATIENT SATISFACTION</h1>
-                        <h1 id="med1">Dexmeac</h1>
-                        <h1 id="med2">Calciutisol</h1>
+                    <div class="medicineWrapper">
+                        <div class="medicine">
+                            <h1 id="recTitle">DOCTOR RECOMMENDED</h1>
+                            <h1 id="med1">
+                                <%= e.doc[0] %>
+                            </h1>
+                            <h1 id="med2">
+                                <%= e.doc[1] %>
+                            </h1>
+                        </div>
+                        <div class="medicine">
+                            <h1 id="recTitle">PATIENT SATISFACTION</h1>
+                            <h1 id="med1">
+                                <%= e.pat[0] %>
+                            </h1>
+                            <h1 id="med2">
+                                <%= e.pat[1] %>
+                            </h1>
+                        </div>
                     </div>
+                    <!-- <a href="recommendation3.html">
+                        <button class="seemore">See More</button>
+                    </a> -->
                 </div>
-                <a href="recommendation3.html">
-                    <button class="seemore">See More</button>
-                </a>
-            </div>
-            <div class="cardChild">
-                <div class="sympName">
-                    <h1>Nausea</h1>
-                </div>
-                <div class="medicineWrapper">
-                    <div class="medicine">
-                        <h1 id="recTitle">DOCTOR RECOMMENDED</h1>
-                        <h1 id="med1">Dexmeac</h1>
-                        <h1 id="med2">Calciutisol</h1>
-                    </div>
-                    <div class="medicine">
-                        <h1 id="recTitle">PATIENT SATISFACTION</h1>
-                        <h1 id="med1">Dexmeac</h1>
-                        <h1 id="med2">Calciutisol</h1>
-                    </div>
-                </div>
-                <a href="recommendation3.html">
-                    <button class="seemore">See More</button>
-                </a>
-            </div>
-            <div class="cardChild">
-                <div class="sympName">
-                    <h1>Fever</h1>
-                </div>
-                <div class="medicineWrapper">
-                    <div class="medicine">
-                        <h1 id="recTitle">DOCTOR RECOMMENDED</h1>
-                        <h1 id="med1">Dexmeac</h1>
-                        <h1 id="med2">Calciutisol</h1>
-                    </div>
-                    <div class="medicine">
-                        <h1 id="recTitle">PATIENT SATISFACTION</h1>
-                        <h1 id="med1">Dexmeac</h1>
-                        <h1 id="med2">Calciutisol</h1>
-                    </div>
-                </div>
-                <a href="recommendation3.html">
-                    <button class="seemore">See More</button>
-                </a>
-            </div>
+                <%})%>
+
         </div>
 
         <p class="disc">* Please note that the medicines shown to you are on basis of the symptoms entered by you. The application does not take responsibility for any misdiagnosis. In case of confusion, please contact our in-house doctors.</p>

@@ -16,10 +16,10 @@ exports.getReminder = async(req, res, next) => {
 exports.postReminder = async(req, res, next) => {
     try {
         const { name, start, end, radio, morning, afternoon, evening } = req.body;
-        if (moment(end).isBefore(moment(start)) || moment(new Date()).isSameOrBefore(start)) {
-            req.flash('errorMessage', 'Invalid Start and end date.')
-            return res.redirect('/reminder');
-        }
+        // if (moment(end).isBefore(moment(start)) || moment(new Date()).isSameOrBefore(start)) {
+        //     req.flash('errorMessage', 'Invalid Start and end date.')
+        //     return res.redirect('/reminder');
+        // }
         if (!(radio === 'beforeFood' || radio === 'afterFood')) {
             req.flash('errorMessage', 'Please select before or after food.')
             return res.redirect('/reminder');

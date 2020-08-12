@@ -6,4 +6,6 @@ const recommendationController = require('../controllers/recommendation.controll
 
 router.get('/', recommendationController.getRecommendation);
 
+router.post('/', recommendationController.postRecommendation);
+
 module.exports = router;

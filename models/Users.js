@@ -21,8 +21,8 @@ const userSchema = new Schema({
     timestamps: true
 });
 
-userSchema.method.validatePassword = function(password) {
+userSchema.methods.validatePassword = function(password) {
     return this.password === crypto.createHmac('sha256', process.env.PASSWORD_HASH_STRING).update(password).digest('hex');
-}
+};
 
 module.exports = mongoose.model('User', userSchema);
