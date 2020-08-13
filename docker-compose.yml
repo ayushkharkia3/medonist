@@ -11,7 +11,7 @@ services:
         - MONGODB_HOST_NAME=mongo
         - MONGODB_PORT=27017
         - MONGODB_NAME=medonist
-        - ML_URL=http://localhost:8000/
+        - ML_URL=https://medonyst.herokuapp.com/
       depends_on:
         - mongo
     mongo:

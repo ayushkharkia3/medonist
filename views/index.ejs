@@ -78,8 +78,8 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="color: red;">Stay Home! Stay Safe!</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
+            <!-- <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div> -->
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -91,45 +91,26 @@
 
     <!-- Reminders -->
     <div class="reminderWrapper">
-        <div class="reminder yellow">
-            <div class="pills">
-                <img src="/images/pills.png" alt="">
+        <% med.forEach(e =>{%>
+            <div class="reminder blue">
+                <div class="pills">
+                    <img src="/images/pills.png" alt="">
+                </div>
+                <div class="medicine">
+                    <h1>
+                        <%= e.name %>
+                    </h1>
+                    <h2 id="morning">
+                        <%= (e.beforeFood)?time:time+2 %>:00</h2>
+                    <h2 id="evening">
+
+                    </h2>
+                </div>
+                <div class="check">
+                    <img src="/images/check.svg" alt="">
+                </div>
             </div>
-            <div class="medicine">
-                <h1>Hydrocodone (10 mg)</h1>
-                <h2 class="checked" id="morning">10 A.M.</h2>
-                <h2 id="evening">10 P.M.</h2>
-            </div>
-            <div class="check">
-                <img src="/images/check.svg" alt="">
-            </div>
-        </div>
-        <div class="reminder brown">
-            <div class="pills">
-                <img src="/images/pills.png" alt="">
-            </div>
-            <div class="medicine">
-                <h1>Hydrocodone (10 mg)</h1>
-                <h2 class="checked" id="morning">10 A.M.</h2>
-                <h2 id="evening">10 P.M.</h2>
-            </div>
-            <div class="check">
-                <img src="/images/check.svg" alt="">
-            </div>
-        </div>
-        <div class="reminder blue">
-            <div class="pills">
-                <img src="/images/pills.png" alt="">
-            </div>
-            <div class="medicine">
-                <h1>Hydrocodone (10 mg)</h1>
-                <h2 class="checked" id="morning">10 A.M.</h2>
-                <h2 id="evening">10 P.M.</h2>
-            </div>
-            <div class="check">
-                <img src="/images/check.svg" alt="">
-            </div>
-        </div>
+            <%})%>
     </div>
 
 
