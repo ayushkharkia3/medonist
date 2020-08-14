@@ -24,8 +24,8 @@
         <a href="/recommendation">Medicines</a>
         <a href="/reminder">Reminders</a>
         <a href="/record">Records</a>
-        <a href="/doctor">Doctors</a>
-        <a href="#">About Us</a>
+        <!-- <a href="/doctor">Doctors</a> -->
+        <a href="/about">About Us</a>
     </div>
 
     <!-- Navbar -->
@@ -53,7 +53,7 @@
             <div class="appNavBtn medicine">
                 <img src="/images/medicine.png" alt="">
                 <h1>Medicines</h1>
-                <p>Get medicine <br> substitutes</p>
+                <p>Get medicine </p>
             </div>
         </a>
         <a href="/reminder">
@@ -177,8 +177,9 @@
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <input class="sympInput" id="medName" required type="text" name="name" placeholder="Name of Medicine">
                 <div class="dateWrapper">
-                    <input class="sympInput" id="startDate" type="date" required name="start" placeholder="Start date">
-                    <input class="sympInput" id="stopDate" type="date" required name="end" placeholder="Stop date">
+                    <!-- <label for="start">Start Date</label> -->
+                    <input class="sympInput" id="startDate" name="start" required type="text" placeholder="Start date">
+                    <input class="sympInput" id="stopDate" name="end" required type="text" placeholder="Stop date">
                 </div>
                 <div class="radioContainer">
                     <div class="radio">

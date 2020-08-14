@@ -23,8 +23,7 @@
         <a href="/recommendation">Medicines</a>
         <a href="/reminder">Reminders</a>
         <a href="/record">Records</a>
-        <a href="/doctor">Doctors</a>
-        <a href="#">About Us</a>
+        <a href="/about">About Us</a>
     </div>
 
     <!-- Navbar -->
@@ -39,10 +38,10 @@
             <h1>MEDONYST</h1>
         </a>
         <a class="navLink" href="#">
-            <img src="/images/bell.svg" alt="">
+            <img src="images/bell.svg" alt="">
         </a>
         <a class="navLink" href="#">
-            <img src="/images/user.svg" alt="">
+            <img src="images/user.svg" alt="">
         </a>
     </nav>
 
@@ -50,21 +49,21 @@
     <div class="appNav">
         <a href="/recommendation">
             <div class="appNavBtn medicine active">
-                <img src="/images/medicine.png" alt="">
+                <img src="images/medicine.png" alt="">
                 <h1>Medicines</h1>
-                <p>Get medicine <br> substitutes</p>
+                <p>Get medicine </p>
             </div>
         </a>
         <a href="/reminder">
             <div class="appNavBtn reminder">
-                <img src="/images/Reminder.png" alt="">
+                <img src="images/Reminder.png" alt="">
                 <h1>Reminders</h1>
                 <p>Set medicine <br> reminders</p>
             </div>
         </a>
         <a href="/record">
             <div class="appNavBtn record">
-                <img src="/images/Record.png" alt="">
+                <img src="images/Record.png" alt="">
                 <h1>Records</h1>
                 <p>Upload your <br> medical records</p>
             </div>
@@ -80,36 +79,36 @@
         </div>
 
         <h1>Medicine Recommender</h1>
-        <form action="/recommendation" method="POST">
-            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <input class="sympInput" id="symp1" name="s1" type="text" placeholder="Enter symptom 1">
-            <input class="sympInput" id="symp2" name="s2" type="text" placeholder="Enter symptom 2">
-            <input class="sympInput" id="symp3" name="s3" type="text" placeholder="Enter symptom 3">
+        <form action="/recommendation" method="post">
+            <input class="sympInput" name="s1" id="symp1" type="text" placeholder="Enter symptom 1">
+            <input class="sympInput" name="s2" id="symp2" type="text" placeholder="Enter symptom 2">
+            <input class="sympInput" name="s3" id="symp3" type="text" placeholder="Enter symptom 3">
 
 
             <p>Select from common symptoms you may have: (Optional)
             </p>
             <div class="symptoms">
-                <button onclick="event.preventDefault()" style="background-color: #fabc41;" id="fever">Fever</button>
-                <button onclick="event.preventDefault()" style="background-color: #e4865c" id="vomit">Vomiting</button>
-                <button onclick="event.preventDefault()" style="background-color: #2199be;" id="rest">Restlessness</button>
-                <button onclick="event.preventDefault()" style="background-color: #707070;" id="nausea">Nausea</button>
-                <button onclick="event.preventDefault()" style="background-color: #fabc41;" id="nose">Runny Nose</button>
+                <button onclick="event.preventDefault()" style="background-color: #fabc41;" id="pain">Pain</button>
+                <button onclick="event.preventDefault()" style="background-color: #e4865c" id="sinusitis">Sinusitis</button>
+                <button onclick="event.preventDefault()" style="background-color: #2199be;" id="constipation">Constipation</button>
+                <button onclick="event.preventDefault()" style="background-color: #707070;" id="nausea">Nausea/Vomiting</button>
+                <button onclick="event.preventDefault()" style="background-color: #fabc41;" id="anxiety">Anxiety</button>
                 <button onclick="event.preventDefault()" style="background-color: #e4865c;" id="cough">Cough</button>
                 <button onclick="event.preventDefault()" style="background-color: #2199be;" id="headache">Headache</button>
                 <button onclick="event.preventDefault()" style="background-color: #707070;" id="birth">Birth Control</button>
                 <button onclick="event.preventDefault()" style="background-color: #2199be;" id="insomnia">Insomnia</button>
                 <button onclick="event.preventDefault()" style="background-color: #fabc41;" id="conjuctivitis">Conjunctivitis</button>
-                <button onclick="event.preventDefault()" style="background-color: #e4865c;" id="migrane">Migraine</button>
+                <button onclick="event.preventDefault()" style="background-color: #e4865c;" id="backpain">Back Pain</button>
                 <button onclick="event.preventDefault()" style="background-color: #707070;" id="acne">Acne</button>
             </div>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="find">
                 <!-- <a href="recommendation2.html"> -->
                 <button>Find Medicine</button>
                 <!-- </a> -->
             </div>
         </form>
-        <p id="disc">* Please note that the medicines shown to you are on basis of the symptoms entered by you. <br> The application does not take responsibility for any misdiagnosis. In case of confusion, please contact our in-house doctors.
+        <p id="disc">* Please note that the medicines shown to you are on basis of the symptoms entered by you.
         </p>
     </div>
 
